@@ -75,7 +75,7 @@ class Net(nn.Module):
           tot_loss = tot_loss + reg*temp_loss
         return tot_loss
 
-    # Orthogonality measure ||W^T.W||_F summed across all linear layers
+    # Orthogonality measure ||W^T.W-I||_F summed across all linear layers
     def orthogonal(self):
         reg = 1e-2
         orth_loss = torch.zeros(1).to(device)
